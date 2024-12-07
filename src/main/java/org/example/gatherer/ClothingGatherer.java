@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.stream.Gatherer;
 
 @AllArgsConstructor
-class ClothingGatherer implements Gatherer<ClothingItem, Optional<ClothingItem>, ClothingItem> {
+public class ClothingGatherer implements Gatherer<ClothingItem, Optional<ClothingItem>, ClothingItem> {
 
     private final String skipCity;
     private int skipCount;
