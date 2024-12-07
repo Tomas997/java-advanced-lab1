@@ -15,11 +15,8 @@ import java.util.stream.Gatherer;
  */
 @AllArgsConstructor
 public class ClothingGatherer implements Gatherer<ClothingItem, Optional<ClothingItem>, ClothingItem> {
-
-    // The city to skip during gathering
     private final String skipCity;
 
-    // The number of items to skip with the specified skipCity
     private int skipCount;
 
     /**
@@ -32,12 +29,10 @@ public class ClothingGatherer implements Gatherer<ClothingItem, Optional<Clothin
     @Override
     public Integrator<Optional<ClothingItem>, ClothingItem, ClothingItem> integrator() {
         return Gatherer.Integrator.of((_, element, downstream) -> {
-            // Check if the element's production city matches the skipCity and if there are remaining items to skip
             if (element.getProductionCity().equals(skipCity) && skipCount > 0) {
-                skipCount--;  // Decrease the skip count for each skipped item
-                return true;  // Skip this item
+                skipCount--;
+                return true;
             }
-            // Otherwise, pass the item downstream
             return downstream.push(element);
         });
     }
