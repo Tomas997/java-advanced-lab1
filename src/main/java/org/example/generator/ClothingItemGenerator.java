@@ -20,7 +20,7 @@ public class ClothingItemGenerator {
                 FABRIC_TYPES[RANDOM.nextInt(FABRIC_TYPES.length)],
                 CITIES[RANDOM.nextInt(CITIES.length)],
                 LocalDate.now().minusMonths(RANDOM.nextInt(240)),
-                (100 + (5000 * RANDOM.nextInt()))
+                (int) (100 + (5000 * RANDOM.nextDouble()))
         ));
     }
 }

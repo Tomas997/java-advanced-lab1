@@ -29,6 +29,12 @@ public class Main {
         for (Map.Entry<String, List<ClothingItem>> entry : groupedClothingItems.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue().size());
         }
+
+        ClothingStatisticsData statistics = clothingItems.stream()
+                .collect(new ClothingStatisticsCollector());
+        System.out.println(statistics);
+
+
     }
 }
 

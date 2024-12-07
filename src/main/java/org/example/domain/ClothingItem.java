@@ -14,7 +14,7 @@ public class ClothingItem {
     private String fabricType;
     private String productionCity;
     private LocalDate productionDate;
-    private double price;
+    private Integer price;
 
 
     public int getMonthsSinceProduction() {
