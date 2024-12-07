@@ -1,8 +1,11 @@
 package org.example;
 
+import org.example.analysis.PriceAnalysis;
 import org.example.domain.ClothingItem;
 import org.example.gatherer.ClothingGatherer;
 import org.example.generator.ClothingItemGenerator;
+import org.example.statistics.ClothingStatisticsCollector;
+import org.example.statistics.ClothingStatisticsData;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -34,7 +37,8 @@ public class Main {
                 .collect(new ClothingStatisticsCollector());
         System.out.println(statistics);
 
-
+        Map<String, Long> priceAnalysis = PriceAnalysis.analyzePrices(clothingItems);
+        System.out.println(priceAnalysis);
     }
 }
 

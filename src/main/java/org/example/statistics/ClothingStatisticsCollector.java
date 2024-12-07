@@ -1,4 +1,4 @@
-package org.example;
+package org.example.statistics;
 
 import org.example.domain.ClothingItem;
 
