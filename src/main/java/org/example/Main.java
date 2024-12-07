@@ -13,7 +13,15 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 
+/**
+ * The type Main.
+ */
 public class Main {
+    /**
+     * The entry point of the application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         final int N = 50;
         String cityToSkip = "Київ";
